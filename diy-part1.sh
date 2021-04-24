@@ -9,6 +9,7 @@
 #=============================================================
 
 # fw876/helloworld
+git clone https://github.com/3wking/openwrt-packages.git package/luci-app-openclash
 src-git kenzo https://github.com/kenzok8/openwrt-packages
 src-git small https://github.com/kenzok8/small
 
