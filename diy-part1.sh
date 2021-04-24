@@ -9,7 +9,8 @@
 #=============================================================
 
 # fw876/helloworld
-sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+src-git small https://github.com/kenzok8/small
 
 # Lienol/openwrt-package
 # sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
