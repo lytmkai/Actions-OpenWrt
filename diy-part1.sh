@@ -9,7 +9,7 @@
 #=============================================================
 
 # fw876/helloworld
-git clone https://github.com/3wking/openwrt-packages.git package/luci-app-openclash
+# git clone https://github.com/3wking/openwrt-packages.git package/luci-app-openclash
 sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 
