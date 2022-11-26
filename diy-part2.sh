@@ -9,11 +9,11 @@ sed -i "/\$netm/a\                                set.network.\$1.gateway='10.0.
 
 sed -i "s/network.globals.ula_prefix='auto'/network.globals.ula_prefix='fd00::1'/g"     package/base-files/files/bin/config_generate
 
-sed -i 's/OpenWrt /OpenWrt-lytmkai /g' zzz-default-settings
+sed -i 's/OpenWrt /OpenWrt-lytmkai /g' package/lean/default-settings/files/zzz-default-settings
 
+sed -i '/192.168.0.0/d' package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/lanlist_ipv4
 
-
-
+echo '192.168.0.0/16' >> package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/proxy_ip
 
 
 
