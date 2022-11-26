@@ -9,7 +9,7 @@ sed -i "/\$netm/a\                                set.network.\$1.gateway='10.0.
 
 sed -i "s/network.globals.ula_prefix='auto'/network.globals.ula_prefix='fd00::1'/g"     package/base-files/files/bin/config_generate
 
-
+sed -i 's/OpenWrt /OpenWrt-lytmkai /g' zzz-default-settings
 
 
 
