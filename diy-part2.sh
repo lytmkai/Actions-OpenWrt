@@ -20,3 +20,9 @@ echo '192.168.0.0/16' >> package/feeds/kenzo/luci-app-passwall/root/usr/share/pa
 
 # Modify default Theme
 sed -i 's/luci-theme-bootstrap/luci-theme-mcat/g' feeds/luci/collections/luci/Makefile
+
+
+go env -w GO111MODULE=off
+
+
+
