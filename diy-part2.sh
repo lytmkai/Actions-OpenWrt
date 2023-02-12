@@ -13,7 +13,7 @@ sed -i 's/OpenWrt /OpenWrt-lytmkai /g' package/lean/default-settings/files/zzz-d
 
 sed -i '/192.168.0.0/d' package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/lanlist_ipv4
 
-echo "\n192.168.0.0/16" >> package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/proxy_ip
+sed -i "1i 192.168.0.0/16" >> package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/proxy_ip
 
 
 
