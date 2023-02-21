@@ -11,6 +11,9 @@ sed -i "s/network.globals.ula_prefix='auto'/network.globals.ula_prefix='fd00::1'
 
 sed -i 's/OpenWrt /OpenWrt-lytmkai /g' package/lean/default-settings/files/zzz-default-settings
 
+sed -i 's/R23.2.14/R23.2.22/g' package/lean/default-settings/files/zzz-default-settings
+
+
 sed -i '/192.168.0.0/d' package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/lanlist_ipv4
 
 sed -i "1i 192.168.0.0/16" >> package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/proxy_ip
@@ -22,7 +25,6 @@ sed -i "1i 192.168.0.0/16" >> package/feeds/kenzo/luci-app-passwall/root/usr/sha
 sed -i 's/luci-theme-bootstrap/luci-theme-mcat/g' feeds/luci/collections/luci/Makefile
 
 
-go env -w GO111MODULE=off
 
 
 
