@@ -105,6 +105,17 @@ jobs:
       with:
         name: OpenWrt_bin_${{ steps.compile.outputs.DEVICE_NAME }}_${{ steps.compile.outputs.FILE_DATE }}
         path: openwrt/bin
+        
+    - name: Upload to ftp
+      id: ftpupload
+      run: |
+        nowtime=`date '+%Y%m%d%H'`
+        tar -zcvf openwrt_bin_$nowtime.tar.gz openwrt/bin
+        
+        curl -v -T openwrt_bin_$nowtime.tar.gz -u ${{ secrets.FTP_USER }}:${{ secrets.FTP_PSWD }}  ftp://${{ secrets.FTP_SERVER }}/
+        
+        ls -lh
+        
 
     - name: Organize files
       id: organize
@@ -121,13 +132,6 @@ jobs:
       with:
         name: OpenWrt_firmware_${{ steps.compile.outputs.DEVICE_NAME }}_${{ steps.compile.outputs.FILE_DATE }}
         path: ${{ steps.organize.outputs.FIRMWARE }}
-
-    - name: Upload firmware to cowtransfer
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
-      run: |
-        curl -fsSL git.io/file-transfer | sh
-        ./transfer cow --block 2621440 -s -p 64 --no-progress ${{ steps.organize.outputs.FIRMWARE }} | tee cowtransfer.log
-        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
 
     - name: Upload firmware to WeTransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
