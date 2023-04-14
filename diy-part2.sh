@@ -11,7 +11,7 @@ sed -i "s/network.globals.ula_prefix='auto'/network.globals.ula_prefix='fd00::1'
 
 sed -i 's/OpenWrt /OpenWrt-lytmkai /g' package/lean/default-settings/files/zzz-default-settings
 
-sed -i 's/R23.2.14/R23.3.4/g' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/R23.4.1/R23.4.15/g' package/lean/default-settings/files/zzz-default-settings
 
 
 sed -i '/192.168.0.0/d' package/feeds/kenzo/luci-app-passwall/root/usr/share/passwall/rules/lanlist_ipv4
