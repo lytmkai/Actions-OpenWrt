@@ -22,7 +22,7 @@ sed -i 's/R23.4.1/R23.4.15/g' package/lean/default-settings/files/zzz-default-se
 
 
 # Modify default Theme
-sed -i 's/luci-theme-bootstrap/luci-theme-mcat/g' feeds/luci/collections/luci/Makefile
+# sed -i 's/luci-theme-bootstrap/luci-theme-mcat/g' feeds/luci/collections/luci/Makefile
 
 
 
