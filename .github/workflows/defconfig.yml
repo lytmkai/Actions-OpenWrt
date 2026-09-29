@@ -6,7 +6,7 @@
 # Blog: https://P3TERX.com
 #=================================================
 
-name: OpenWrt Builder
+name: OpenWrt Make Defconfig
 
 on:
   repository_dispatch:
