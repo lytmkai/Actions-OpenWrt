@@ -91,4 +91,4 @@ jobs:
       uses: actions/upload-artifact@main
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        path: /workdir/openwrt/.config
+        path: ./openwrt/.config
