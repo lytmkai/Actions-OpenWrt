@@ -90,5 +90,7 @@ jobs:
     - name: Upload defconfig file
       uses: actions/upload-artifact@main
       with:
-        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: config_file
         path: ./openwrt/.config
+        include-hidden-files: true
+        
